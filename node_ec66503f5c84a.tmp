@@ -1,0 +1,16 @@
+function binary(decimal) {
+    let reminder = 0
+	let quotient = null
+	let binary = []
+	let binaryString = ''
+	//input decimal
+	do {
+		quotient = decimal / 2
+		reminder = decimal % 2
+		binary.push(reminder)
+	} while (quotient >= 0)
+	//output binary string
+	return binary
+}
+
+console.log(binary(100))
