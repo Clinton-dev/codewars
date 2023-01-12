@@ -9,7 +9,6 @@ and return that product.
     [-23, 4, -3, 8, -12] -> -12
     [5, 6, -4, 2, 3, 2, -23] -> 30
 */
-
 function solution(inputArray) {
     let product = 0
     let negProducts = []
@@ -18,7 +17,6 @@ function solution(inputArray) {
     const numberOfPairs = (pairs % 2 == 0) ? Math.ceil(pairs) : Math.ceil(pairs) + 1
 
     for(let i = 0; i <= numberOfPairs; i++) {
-        console.log(inputArray[index], inputArray[index+1])
         const adjacentProduct = inputArray[index] * inputArray[index+1]
 
         if(adjacentProduct > product) {
@@ -38,3 +36,28 @@ function solution(inputArray) {
         return negProducts.length ? Math.max(...negProducts) : 0
     }
 }
+
+
+
+function solution1(inputArray) {
+    var prod = inputArray[0] * inputArray[1];
+
+    for (var i = 1; i<inputArray.length - 1;i++) {
+        prod = Math.max(prod, inputArray[i] * inputArray[i+1]);
+    }
+
+    return prod
+}
+
+console.time()
+solution([1, 0, 1, 0, 1000])
+console.timeEnd()
+
+console.time()
+solution1([1, 0, 1, 0, 1000]);
+console.timeEnd()
+
+
+
+
+
