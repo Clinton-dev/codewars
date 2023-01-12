@@ -44,3 +44,4 @@ function sortByDuration(data, flightLength) {
 }
 
 sortByDuration(podcasts, 60);
+sortByDuration(podcasts, 1200);
